@@ -6,9 +6,9 @@
 %   Pierre-Jean Meyer, <pierre-jean.meyer -AT- univ-eiffel.fr>, COSYS-ESTAS, Univ Gustave Eiffel
 %   Mohamed Ghazel, <mohamed.ghazel -AT- univ-eiffel.fr>, COSYS-ESTAS, Univ Gustave Eiffel
 %
-% Date: 28th of April 2025
-% Last update: 28th of April 2025
-% Last revision: 28th of April 2025
+% Date: 25th of April 2025
+% Last update: 29th of April 2025
+% Last revision: 29th of April 2025
 
 %------------- BEGIN CODE --------------
 
@@ -98,7 +98,7 @@ lgd = legend('Location','best');
 set(lgd, 'Interpreter', 'latex');
 xlabel('$x_1$');
 ylabel('$x_2$');
-% print('trajectories_and_zonotope_correction_fig.eps', '-depsc')
+% print('trajectories_and_zonotopes_correction_fig.eps', '-depsc')
 
 %% Error bounding by defining the function as a DT nonlinear system
 %   and solving the reachability analylsis at tf=1s in a single step
@@ -247,7 +247,6 @@ error_sander = (exp(L)-1)*inf_norm/L;
 
 % Show on error set represtentation
 figure(2)
-% plot(inf_norm,[1,2],'g','LineWidth',2, 'DisplayName','$||\Omega_{\varepsilon}||_{\infty}$')
 plot(inf_norm,[1,2],'Color', '#EDB120', 'LineWidth',2, 'DisplayName','$||\Omega_{\varepsilon}||_{\infty}$')
 plot(error_sander,[1,2],'m','LineWidth',2, 'DisplayName','Error bound from Sander 2022')
 % print('error_bound_comparison_with_Sander_fig.eps', '-depsc')
@@ -270,5 +269,9 @@ ylabel('$x_2$', 'Interpreter', 'latex');
 % Set axis limits
 xlim([-0.5 1.6])
 ylim([-0.5 1.6])
+
+% Compute tightness ratio
+% Sander 2022 error bound vs. ours
+tightness_sander_vs_ours = volume(error_sander)/volume(error_intHull)
 
 %------------- END OF CODE --------------
