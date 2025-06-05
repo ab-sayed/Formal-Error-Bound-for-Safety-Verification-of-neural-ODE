@@ -1,10 +1,9 @@
 ## Formal-Error-Bound-for-Safety-Verification-of-neural-ODE
 
-This repository contains the matlab codes for our paper: "Bridging Neural ODE and ResNet: A Formal Error Bound for Safety Verification"
+This repository contains the matlab codes for our paper: "[Bridging Neural ODE and ResNet: A Formal Error Bound for Safety Verification](http://arxiv.org/abs/2506.03227)"
 
 ## Prerequisites
 - [CORA](https://tumcps.github.io/CORA/): Continuous Reachability Analyzer toolbox 
-
 
 
 ## Installation
